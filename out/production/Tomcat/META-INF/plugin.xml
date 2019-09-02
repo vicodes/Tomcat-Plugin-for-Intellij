@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.vicodes.Plugins.Tomcat.v1</id>
+  <name>Tommy! Tomcat plugin for war Deployment</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">ViCodes</vendor>
+
+  <description>To deploy war files on tomcat server in Intellij communtiy version</description>
+
+  <change-notes>Initial Build </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <group id="MyPlugin.Tommy" text="_Tommy" description="Tomcat menu">
+      <add-to-group group-id="MainMenu" anchor="last"  />
+        <action id="Myplugin.TomcatPathSetup" class="Tomcat.TomcatPathSetup" text="Tomcat _path" description="Tomcat Path Setup" >
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt P"/>
+        </action>
+        <action id="Myplugin.Deploy" class="Tomcat.DeployWar" icon="" text="Deploy _war" description="Run on Server" >
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
+        </action>
+        <action id="Myplugin.Debug" class="Tomcat.Debug" text="Debug Mode" description="Debugging" >
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
+        </action>
+      <action id="Myplugin.Kill" class="Tomcat.Kill" text="_Stop" description="Stop tomcat" >
+        <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
+      </action>
+    </group>
+
+  </actions>
+
+</idea-plugin>
