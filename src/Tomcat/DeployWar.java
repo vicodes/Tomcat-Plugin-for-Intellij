@@ -28,8 +28,7 @@ public class DeployWar extends AnAction {
 
         String warPath = war;
         try {
-            assert WebAppName != null;
-            if(!WebAppName.isEmpty() || !WebAppName.isBlank()) {
+            if( WebAppName != null || !WebAppName.isBlank()) {
                 tomcatHelper.copyWar(warPath);
                 tomcatHelper.runTomcat(false);
                 tomcatHelper.notify(project,"Information","Service deployed:"+WebAppName,NotificationType.INFORMATION);

@@ -27,13 +27,12 @@ public class TomcatPathSetup extends AnAction {
         Project project = event.getData(PlatformDataKeys.PROJECT);
         TomcatHelper tomcatHelper = new TomcatHelper();
         String currentTomcatPath = tomcatHelper.getTomcatPath();
-        String tomcatPath = Messages.showInputDialog(project, "Current Tomcat Directory:"+currentTomcatPath, "Path", Messages.getQuestionIcon());
+        String tomcatPath = Messages.showInputDialog(project, "Current Tomcat Directory: "+currentTomcatPath, "Path", Messages.getQuestionIcon());
         try{
-            assert tomcatPath != null;
-            if (!tomcatPath.isEmpty() || !tomcatPath.isBlank()) {
-            setPathForTomcat(project,tomcatPath);
-            tomcatHelper.notify(project,"Path Updated.","Path:"+tomcatPath,NotificationType.INFORMATION);
-        }
+            if (tomcatPath != null || !tomcatPath.isBlank()) {
+                setPathForTomcat(project, tomcatPath);
+                tomcatHelper.notify(project, "Path Updated.", "Path: " + tomcatPath, NotificationType.INFORMATION);
+            }
         }
         catch (Exception e){
            tomcatHelper.notify(project,"Path Updated.","Path update failed:"+tomcatPath+" !!!",NotificationType.INFORMATION);
