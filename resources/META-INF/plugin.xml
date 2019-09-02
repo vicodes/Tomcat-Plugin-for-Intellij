@@ -2,7 +2,7 @@
   <id>com.vicodes.Plugins.Tomcat.v1</id>
   <name>Tommy! Tomcat plugin for war Deployment</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">ViCodes</vendor>
+  <vendor email="mohitsinghibm@gmail.com" url="https://github.com/vicodes?tab=repositories">ViCodes</vendor>
 
   <description>To deploy war files on tomcat server in Intellij communtiy version</description>
 
